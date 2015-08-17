@@ -14,12 +14,15 @@ function infoMsg($msg, $to) {
 	die();
 }
 
-function getDoneq() {
+function getDoneq($inqueue=false) {
 	$ret = array();
-	$d = dir(HYLAFAX_ROOT . "doneq/");
+
+    $folder = $inqueue ? "sendq/" : "doneq/";
+
+	$d = dir(HYLAFAX_ROOT . $folder);
 	while (false !== ($entry = $d->read())) {
 		if(preg_match("/^q[0-9]+$/", $entry)) {
-			$rows = explode("\n", file_get_contents(HYLAFAX_ROOT . "doneq/$entry"));
+			$rows = explode("\n", file_get_contents(HYLAFAX_ROOT . $folder . $entry));
 			$infos = array();
 			foreach($rows as $r) {
                 if(trim($r) == "") continue;

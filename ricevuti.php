@@ -22,3 +22,6 @@ $i = 0;
 	</tr>
 <?php endforeach; ?>
 </table>
+    <?php if($i == 0): ?>
+        <p style="text-align: center;">Nessun fax ricevuto</p>
+    <?php endif; ?>
