@@ -1,0 +1,4 @@
+
+RewriteEngine on
+
+RewriteRule ^get/(done|recv)/fax_([0-9]*)\.pdf$ get.php?queue=$1&qid=$2 [NC]
