@@ -2,7 +2,7 @@
 require "header.php";
 $i = 0;
 ?>
-<table style="margin: auto;">
+<table class="listafax" style="margin: auto;">
 	<tr>
 		<!-- th>Queue ID</th -->
 		<th>A</th>

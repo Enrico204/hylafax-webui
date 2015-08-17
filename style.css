@@ -25,7 +25,11 @@ img {
 	text-underline: none;
 }
 
-.ricevuti th {
+.listafax {
+    min-width: 600px;
+}
+
+.listafax th {
 	background-color: #CCCCCC;
 }
 

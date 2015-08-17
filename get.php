@@ -11,7 +11,7 @@ switch($_GET["queue"]) {
         $fileq = HYLAFAX_ROOT . "docq/doc" . $qid . ".tif." . $qid;
         $filetif = HYLAFAX_ROOT . "docq/doc" . $qid . ".tif";
         if(file_exists($file)) {
-            echo `/usr/bin/ps2pdf $file -`;
+            passthru("/usr/bin/ps2pdf $file -");
         } else {
             if(file_exists($fileq)) {
                 $file = $fileq;

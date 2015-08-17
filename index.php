@@ -3,6 +3,7 @@ require "header.php";
 
 if(isset($_SESSION["errmsg"])) {
 	echo "<p style=\"text-align: center; color: red;\">" . $_SESSION["errmsg"] . "</p>";
+    echo "<p style=\"text-align: center;\"><button type=\"button\" onclick=\"location.href = 'index.php';\">Indietro</button></p>";
 	unset($_SESSION["errmsg"]);
 	require "footer.php";
 	die();
@@ -10,20 +11,21 @@ if(isset($_SESSION["errmsg"])) {
 
 if(isset($_SESSION["infomsg"])) {
 	echo "<p style=\"text-align: center; color: blue;\">" . $_SESSION["infomsg"] . "</p>";
+    echo "<p style=\"text-align: center;\"><button type=\"button\" onclick=\"location.href = 'index.php';\">Indietro</button></p>";
 	unset($_SESSION["infomsg"]);
 	require "footer.php";
 	die();
 }
 
 ?>
-<form class="fileform" action="sendfax.php" method="POST" enctype="multipart/form-data">
+<form class="fileform" action="sendfax.php" method="POST" enctype="multipart/form-data" onsubmit="return checkValidForm()">
 <table>
 	<tr>
 		<th>Destinatario</th>
 		<td><input type="text" placeholder="0773123456" name="dest" id="dest" /></td>
 	</tr>
 	<tr>
-		<th>File</th>
+		<th>File (PDF)</th>
 		<td><input type="file" name="f" /></td>
 	</tr>
 	<tr>
@@ -48,6 +50,7 @@ if(isset($_SESSION["infomsg"])) {
 			alert("Numero fax di destinazione non valido");
 			return false;
 		}
+        return true;
 	}
 </script>
 <?php

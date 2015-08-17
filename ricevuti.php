@@ -2,7 +2,7 @@
 require "header.php";
 $i = 0;
 ?>
-<table class="ricevuti" style="margin: auto;">
+<table class="listafax" style="margin: auto;">
 	<tr>
 		<!-- th>ID</th -->
 		<th>Da</th>
