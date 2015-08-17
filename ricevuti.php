@@ -1,5 +1,6 @@
 <?php
 require "header.php";
+$i = 0;
 ?>
 <table class="ricevuti" style="margin: auto;">
 	<tr>

@@ -1,14 +1,14 @@
 <?php
 require "header.php";
 
-if($_SESSION["errmsg"]) {
+if(isset($_SESSION["errmsg"])) {
 	echo "<p style=\"text-align: center; color: red;\">" . $_SESSION["errmsg"] . "</p>";
 	unset($_SESSION["errmsg"]);
 	require "footer.php";
 	die();
 }
 
-if($_SESSION["infomsg"]) {
+if(isset($_SESSION["infomsg"])) {
 	echo "<p style=\"text-align: center; color: blue;\">" . $_SESSION["infomsg"] . "</p>";
 	unset($_SESSION["infomsg"]);
 	require "footer.php";

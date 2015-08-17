@@ -22,6 +22,7 @@ function getDoneq() {
 			$rows = explode("\n", file_get_contents(HYLAFAX_ROOT . "doneq/$entry"));
 			$infos = array();
 			foreach($rows as $r) {
+                if(trim($r) == "") continue;
 				list($k, $v) = explode(":", $r, 2);
 				if(HYLAFAX_REPLACEZERO && ($k == "number" || $k == "external")) {
 					$v = preg_replace("/^0/", "", $v);
@@ -72,6 +73,7 @@ function getRecvq() {
 
 		$fname = HYLAFAX_ROOT . "recvq/$entry";
 		$infos = `/usr/sbin/faxinfo -c "," $fname`;
+        if(preg_match("/corrupted/", $infos)) continue;
 		list($fname, $sender, $pages, $quality, $pagetype, $received, $ttr, $sr, $df, $ec) = explode(",", $infos);
 
 		$id = intval(preg_replace("/^fax([0-9]+)\\.tif$/", "\\1", basename($fname)));
@@ -79,6 +81,10 @@ function getRecvq() {
 		if($sender == "" || $sender == "<UNSPECIFIED>") {
 			$sender = "Anonimo";
 		}
+
+        if(HYLAFAX_REPLACEZERO) {
+            $sender = preg_replace("/^0/", "", $sender);
+        }
 
 		$ret[$id] = array(
 			"id" => $id,
