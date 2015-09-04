@@ -46,9 +46,15 @@ if(isset($_SESSION["infomsg"])) {
 </form>
 <script>
 	$('#dest').keydown(function(event){
-		var char = String.fromCharCode(event.which);
+		var ch = String.fromCharCode(event.which);
 
-		if((!char.match(/^[0-9]+$/) && event.which > 31) || event.which == 0) {
+		if((!ch.match(/^[0-9]+$/)
+            && event.which > 31
+            && event.which != 46
+            && !(event.which >= 37 && event.which <= 40)
+            && !(event.which >= 96 && event.which <= 105)) || event.which == 0) {
+            console.log(ch);
+            console.log(event.which);
 			event.preventDefault();
 		}
 	});
