@@ -14,6 +14,21 @@ function infoMsg($msg, $to) {
 	die();
 }
 
+function getAllNumbers() {
+    $numbers = array();
+    $d = dir(HYLAFAX_ROOT . "etc/");
+    while (false !== ($entry = $d->read())) {
+        if(preg_match("/^config\\.tty(x[0-9]+)/", $entry, $matches)) {
+            $output = "";
+            $modem = "tty" . $matches[1];
+            $faxnumber = exec("cat ".HYLAFAX_ROOT."etc/config.$modem | grep FAXNumber | awk -F' ' '{ print $2 }'", $output);
+            $localidentifier = exec("cat ".HYLAFAX_ROOT."etc/config.$modem | grep LocalIdentifier | awk -F' ' '{ print $2 }'", $output);
+            $numbers[$modem] = $localidentifier;
+        }
+    }
+    return $numbers;
+}
+
 function getDoneq($inqueue=false) {
 	$ret = array();
 

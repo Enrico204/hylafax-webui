@@ -20,6 +20,14 @@ if(isset($_SESSION["infomsg"])) {
 ?>
 <form class="fileform" action="sendfax.php" method="POST" enctype="multipart/form-data" onsubmit="return checkValidForm()">
 <table>
+    <tr>
+        <th>Mittente</th>
+        <td><select name="modem">
+<?php foreach(getAllNumbers() as $modem => $identifier): ?>
+                <option value="<?php echo $modem ?>"><?php echo $identifier ?></option>
+<?php endforeach; ?>
+            </select></td>
+    </tr>
 	<tr>
 		<th>Destinatario</th>
 		<td><input type="text" placeholder="0773123456" name="dest" id="dest" /></td>

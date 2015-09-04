@@ -22,6 +22,9 @@ if(HYLAFAX_REPLACEZERO) {
     $dest = "0" . $dest;
 }
 
+$modem = $_POST["modem"];
+$modem = preg_replace("/^[^A-Za-z0-9]*$/", "", $modem);
+
 $uploadfile = "/tmp/" . time() . "_" . $dest . ".tif";
 
 $out = "";
@@ -30,7 +33,8 @@ exec("/usr/bin/gs -q -dNOPAUSE -dBATCH -sDEVICE=tiffg4 -sPAPERSIZE=a4 -sOutputFi
 if($ret != 0) {
     errMsg("FAX non inviato. Errore interno durante l'invio del FAX.", "index.php");
 }
-exec("/usr/bin/sendfax -n -E -l -s a4 -b 9600 -B 9600 -d $dest $uploadfile", $out, $ret);
+
+exec("/usr/bin/sendfax -n -E -l -s a4 -b 9600 -B 9600 -h $modem@localhost -d $dest $uploadfile", $out, $ret);
 unlink($uploadfile);
 
 if($ret != 0) {
