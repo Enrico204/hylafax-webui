@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Hylafax\n"
+"POT-Creation-Date: 2017-06-11 13:46+0100\n"
+"PO-Revision-Date: 2017-06-11 13:48+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it_IT\n"
+
+msgid "A"
+msgstr "A"
+
+msgid "Anonimo"
+msgstr "Anonimo"
+
+msgid "bloccato"
+msgstr "bloccato"
+
+msgid "Coda invio"
+msgstr "Coda invio"
+
+msgid "Coda vuota"
+msgstr "Coda vuota"
+
+msgid "Da"
+msgstr "Da"
+
+msgid "Destinatario"
+msgstr "Destinatario"
+
+msgid "Documento FAX non selezionato"
+msgstr "Documento FAX non selezionato"
+
+msgid "Durata"
+msgstr "Durata"
+
+msgid "FAX accodato per l'invio."
+msgstr "FAX accodato per l'invio."
+
+msgid "Fax inviati"
+msgstr "Fax inviati"
+
+msgid "FAX non inviato. Errore interno durante l'invio del FAX."
+msgstr "FAX non inviato. Errore interno durante l'invio del FAX."
+
+msgid "Fax ricevuti"
+msgstr "Fax ricevuti"
+
+msgid "Fax Virtuale"
+msgstr "Fax Virtuale"
+
+msgid "File (PDF)"
+msgstr "File (PDF)"
+
+msgid "Il documento FAX selezionato deve essere di tipo PDF"
+msgstr "Il documento FAX selezionato deve essere di tipo PDF"
+
+msgid "in attesa"
+msgstr "in attesa"
+
+msgid "in coda per l'invio"
+msgstr "in coda per l'invio"
+
+msgid "Indietro"
+msgstr "Indietro"
+
+msgid "Invia fax"
+msgstr "Invia fax"
+
+msgid "Invia FAX"
+msgstr "Invia FAX"
+
+msgid "Inviato"
+msgstr "Inviato"
+
+msgid "invio completato"
+msgstr "invio completato"
+
+msgid "invio fallito"
+msgstr "invio fallito"
+
+msgid "invio in corso"
+msgstr "invio in corso"
+
+msgid "Mittente"
+msgstr "Mittente"
+
+msgid "Nessun fax ricevuto"
+msgstr "Nessun fax ricevuto"
+
+msgid "Numero di telefono non valido"
+msgstr "Numero di telefono non valido"
+
+msgid "Numero fax di destinazione non valido"
+msgstr "Numero fax di destinazione non valido"
+
+msgid "Pagine"
+msgstr "Pagine"
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "pronto per l'invio"
+msgstr "pronto per l'invio"
+
+msgid "Quando"
+msgstr "Quando"
+
+msgid "sospeso"
+msgstr "sospeso"
+
+msgid "Stato"
+msgstr "Stato"

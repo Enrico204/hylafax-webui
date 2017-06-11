@@ -5,11 +5,11 @@ $i = 0;
 <table class="listafax" style="margin: auto;">
 	<tr>
 		<!-- th>Queue ID</th -->
-		<th>A</th>
-		<th>Inviato</th>
-		<th>Pagine</th>
-		<th>Stato</th>
-		<th>PDF</th>
+		<th><?= _("A"); ?></th>
+		<th><?= _("Inviato"); ?></th>
+		<th><?= _("Pagine"); ?></th>
+		<th><?= _("Stato"); ?></th>
+		<th><?= _("PDF"); ?></th>
 	</tr>
 <?php foreach(getDoneq(true) as $r): ?>
 	<tr class="<?php echo ($i++ % 2 == 0 ? "even" : "odd") ?> faxstate<?php echo $r["state"] ?>">
@@ -23,5 +23,5 @@ $i = 0;
 <?php endforeach; ?>
 </table>
 <?php if($i == 0): ?>
-    <p style="text-align: center;">Coda vuota</p>
+    <p style="text-align: center;"><?= _("Coda vuota"); ?></p>
 <?php endif; ?>

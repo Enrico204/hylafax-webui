@@ -5,11 +5,11 @@ $i = 0;
 <table class="listafax" style="margin: auto;">
 	<tr>
 		<!-- th>ID</th -->
-		<th>Da</th>
-		<th>Quando</th>
-		<th>Durata</th>
-		<th>Pagine</th>
-		<th>PDF</th>
+		<th><?= _("Da"); ?></th>
+		<th><?= _("Quando"); ?></th>
+		<th><?= _("Durata"); ?></th>
+		<th><?= _("Pagine"); ?></th>
+		<th><?= _("PDF"); ?></th>
 	</tr>
 <?php foreach(getRecvq() as $r): ?>
 	<tr class="<?php echo ($i++ % 2 == 0 ? "even" : "odd") ?>">
@@ -23,5 +23,5 @@ $i = 0;
 <?php endforeach; ?>
 </table>
     <?php if($i == 0): ?>
-        <p style="text-align: center;">Nessun fax ricevuto</p>
+        <p style="text-align: center;"><?= _("Nessun fax ricevuto"); ?></p>
     <?php endif; ?>

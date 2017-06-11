@@ -2,6 +2,15 @@
 session_start();
 require "config.inc.php";
 
+putenv('LC_ALL=' + HYLAFAX_LANG);
+if (setlocale(LC_ALL, HYLAFAX_LANG) === FALSE) {
+	die("Locale " + HYLAFAX_LANG + " not available on this system");
+}
+
+bindtextdomain("hylafax", "./locale");
+bind_textdomain_codeset("hylafax", "UTF-8");
+textdomain("hylafax");
+
 function errMsg($errmsg, $to) {
 	$_SESSION["errmsg"] = $errmsg;
 	header("Location: $to");
@@ -50,28 +59,28 @@ function getDoneq($inqueue=false) {
 				if($k == "state") {
 					switch(intval($v)) {
 						case 1:
-							$infos["state_string"] = "sospeso";
+							$infos["state_string"] = _("sospeso");
 							break;
 						case 2:
-							$infos["state_string"] = "in coda per l'invio";
+							$infos["state_string"] = _("in coda per l'invio");
 							break;
 						case 3:
-							$infos["state_string"] = "in attesa";
+							$infos["state_string"] = _("in attesa");
 							break;
 						case 4:
-							$infos["state_string"] = "bloccato";
+							$infos["state_string"] = _("bloccato");
 							break;
 						case 5:
-							$infos["state_string"] = "pronto per l'invio";
+							$infos["state_string"] = _("pronto per l'invio");
 							break;
 						case 6:
-							$infos["state_string"] = "invio in corso";
+							$infos["state_string"] = _("invio in corso");
 							break;
 						case 7:
-							$infos["state_string"] = "invio completato";
+							$infos["state_string"] = _("invio completato");
 							break;
 						case 8:
-							$infos["state_string"] = "invio fallito";
+							$infos["state_string"] = _("invio fallito");
 							break;
 					}
 				}
@@ -97,7 +106,7 @@ function getRecvq() {
 		$id = intval(preg_replace("/^fax([0-9]+)\\.tif$/", "\\1", basename($fname)));
 
 		if($sender == "" || $sender == "<UNSPECIFIED>") {
-			$sender = "Anonimo";
+			$sender = _("Anonimo");
 		}
 
         if(HYLAFAX_REPLACEZERO) {

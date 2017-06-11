@@ -4,11 +4,11 @@ require "header.php";
 <table class="listafax" style="margin: auto;">
 	<tr>
 		<!-- th>Queue ID</th -->
-		<th>A</th>
-		<th>Inviato</th>
-		<th>Pagine</th>
-		<th>Stato</th>
-		<th>PDF</th>
+		<th><?= _("A"); ?></th>
+		<th><?= _("Inviato"); ?></th>
+		<th><?= _("Pagine"); ?></th>
+		<th><?= _("Stato"); ?></th>
+		<th><?= _("PDF"); ?></th>
 	</tr>
 <?php foreach(getDoneq() as $r): ?>
 	<tr class="faxstate<?php echo $r["state"] ?>">

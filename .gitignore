@@ -1,1 +1,4 @@
 config.inc.php
+.idea
+*.iml
+*.mo
