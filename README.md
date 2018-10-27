@@ -1,4 +1,4 @@
 # hylafax-webui
 A simple web interface to hylafax
 
-This project still in alpha-state.
+This project is still in alpha-state.
